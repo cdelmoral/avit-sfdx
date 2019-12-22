@@ -1,7 +1,7 @@
 # AVIT ZSH Theme
 
 PROMPT='
-$(_user_host)${_current_dir} $(git_prompt_info) $(_ruby_version)
+$(_user_host)${_current_dir} $(sfdx_defaultusername) $(git_prompt_info) $(_ruby_version)
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
 PROMPT2='%{$fg[$CARETCOLOR]%}◀%{$reset_color%} '
@@ -11,6 +11,13 @@ RPROMPT='$(_vi_status)%{$(echotc UP 1)%}$(_git_time_since_commit) $(git_prompt_s
 local _current_dir="%{$fg_bold[blue]%}%3~%{$reset_color%} "
 local _return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
 local _hist_no="%{$fg[grey]%}%h%{$reset_color%}"
+
+function sfdx_defaultusername() {
+  defaultusername="$(sfdx force:config:get defaultusername --json | jq '.result[].value' -r 2> /dev/null)";
+  if [ ! $defaultusername = "null" ]; then
+    echo "%{$fg[cyan]%}${defaultusername}%{$reset_color%}"
+  fi
+}
 
 function _current_dir() {
   local _max_pwd_length="65"
