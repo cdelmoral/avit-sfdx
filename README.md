@@ -2,7 +2,7 @@
 
 <p align="center"><img src="images/demo.gif" alt="Demo" width="389"/></p>
 
-Custom theme for oh-my-zsh that expands avit, provided by default. It adds the configured `defaultusername` for `sfdx`.
+Custom theme for oh-my-zsh that expands on the default provided theme avit to add the configured `defaultusername` for `sfdx` in the prompt.
 
 ### Prerequisites
 
@@ -11,4 +11,4 @@ Custom theme for oh-my-zsh that expands avit, provided by default. It adds the c
 
 ### Installation
 
-Simply copy the `avit-sfdx.zsh-theme` file into your custom themes folder (`~/.oh-my-zsh/custom/themes/`), and update your `~/.zshrc` to load it, setting the variable `ZSH_THEME="avit-sfdx"`. Restart your terminal.
+Simply copy the `avit-sfdx.zsh-theme` file into your custom themes folder (`~/.oh-my-zsh/custom/themes/`), and update your `~/.zshrc` to use it by setting the variable `ZSH_THEME="avit-sfdx"`. Restart your terminal and happy Salesforce coding!
